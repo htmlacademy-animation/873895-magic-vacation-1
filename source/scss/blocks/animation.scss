@@ -64,3 +64,45 @@
     }
   }
 }
+
+body {
+  &.active {
+    .page-header__logo {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .page-header__nav {
+      opacity: 1;
+      visibility: visible;
+    }
+ 
+    .screen__footer {
+      opacity: 1;
+      transform: translateX(0);
+      visibility: visible;
+    }
+
+    .social-block__toggler::before {
+      opacity: 0;
+      animation: social-block 0.4s 0.5s forwards;
+    }
+  }
+}
+
+@keyframes social-block {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0);
+  }
+
+  80% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
